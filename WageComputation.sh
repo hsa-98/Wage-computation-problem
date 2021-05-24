@@ -1,21 +1,22 @@
 #!/bin/bash
 echo "Welcome to wage computation problem"
 wagePerHour=20
-
 attendance=$((RANDOM %3))
-if [ $attendance -eq 1 ]
-then
+case $attendance
+	1)
 	echo "Employee is present"
 	hours=8
 	wage=$(($wagePerHour*$hours))
 	echo $wage
-elif [ $attendance -eq 2 ]
-then	
+		;;
+	2)
 	echo "EMployee part time present"
 	hours=4
 	wage=$(($wagePerHour*$hours))
 	echo $wage
-else
+		;;
+	3)
 	echo "Employee is absent" 
 	echo "No wage as employee is absent"
-fi
+		;;
+esac
